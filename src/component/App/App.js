@@ -1,5 +1,8 @@
+//This is an App.js component
+
 import logo from './logo.svg';
 import './App.css';
+
 
 function App() {
   return (
