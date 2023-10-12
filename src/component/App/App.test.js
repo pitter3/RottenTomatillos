@@ -1,3 +1,5 @@
+//This is the testing suite for App
+
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
