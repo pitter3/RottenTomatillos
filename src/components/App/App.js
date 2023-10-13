@@ -10,11 +10,15 @@ function App() {
   const [movies, setMovies] = useState(mockData);
   const [singleMovie, setSingleMovie] =useState([]);
 
+  function displaySingleMovie(movie) {
+    console.log("movie", movie)
+    setSingleMovie(movie)
+
+  }
   return (
     <div className="App">
       <h1>Rancid Tomatillos!</h1> 
-      {/* <Movies movies={movies} /> */}
-      {!singleMovie.length ?  <Movies movies={movies} /> : null}
+      {singleMovie ?  <Movies movies={movies} displaySingleMovie={displaySingleMovie}/>: <p>Single movie goes here</p> }
     </div>
   )
 }
