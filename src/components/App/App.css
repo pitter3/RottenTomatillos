@@ -1,5 +1,8 @@
-/* This is a App.css test */
-
 .App {
   text-align: center;
+  background-color: green;
+}
+
+h1 {
+  margin: 0;
 }
