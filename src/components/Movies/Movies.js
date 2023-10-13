@@ -1,1 +1,7 @@
-//This is a card test
+import './Movies.css';
+
+function Movies() {
+  return (
+    
+  )
+}
