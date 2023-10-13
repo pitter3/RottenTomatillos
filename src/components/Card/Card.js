@@ -1,8 +1,8 @@
 import './Card.css';
 
-function Card( { image } ) {
+function Card( { image, displaySingleMovie } ) {
   return (
-    <div className='card'>
+    <div className='card' onClick={() => displaySingleMovie()}>
       <img 
         src={ image } 
         alt="movie poster" 
