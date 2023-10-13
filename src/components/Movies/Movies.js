@@ -1,12 +1,23 @@
 import './Movies.css';
+import Card from '../Card/Card';
 
-function Movies( props ) {
-  console.log(props)
-    const { name } = props
+function Movies( {movies} ) {
+  // console.log(props)
+
+  const MovieIcons = movies.map(movie => {
+    return (
+      <Card
+        id={movie.id}
+        key={movie.id}
+        image={movie.poster_path}
+      />
+    )
+  })
+  
   return (
-    <h2>
-      Hello, {props.name}!
-    </h2>
+    <div className='movie-container'>
+      {MovieIcons}
+    </div>
   )
 }
 
