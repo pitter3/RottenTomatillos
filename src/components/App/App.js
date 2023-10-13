@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import "./App.css"
 import movieData from '../../MockData';
+import Movies from '../Movies/Movies'
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <h1>Rancid Tomatillos!</h1> 
+      <Movies name="Nicole"/>
     </div>
   )
 }

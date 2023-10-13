@@ -1,8 +1,9 @@
 .App {
   text-align: center;
-  background-color: green;
+  /* background-color: green; */
 }
 
 h1 {
   margin: 0;
+  background-color: green;
 }
