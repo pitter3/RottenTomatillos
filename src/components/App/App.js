@@ -11,21 +11,19 @@ function App() {
   const mockData = movieData.movies
   const singleMockData = singleMovieData.movies
   const [movies, setMovies] = useState(mockData);
-  const [singleMovie, setSingleMovie] = useState(singleMockData);
+  const [singleMovie, setSingleMovie] = useState(null);
 
-  // function displaySingleMovie(id) {
-  //   setSingleMovie(id) // need to update this!
-  //   const yourMovie = movies.find((movie) => {
-  //     return movie.id == id
-  //   })
-  //  return console.log(yourMovie)
-  // }
+  function displaySingleMovie(id) {
+    const yourMovie = movies.find((movie) => {
+      return movie.id == id
+    })
+   setSingleMovie(yourMovie)
+  }
   
   return (
     <div className="App">
       <h1>Rancid Tomatillos!</h1> 
-      {/* {singleMovie ?  <Movies movies={movies} displaySingleMovie={displaySingleMovie}/>: <p>Single movie goes here</p> } */}
-      <SingleMovie singleMovie={singleMovie} />
+      {singleMovie ?  <SingleMovie singleMovie={singleMovie} /> : <Movies movies={movies} displaySingleMovie={displaySingleMovie}/>   }
     </div>
   )
 }
