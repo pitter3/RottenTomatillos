@@ -18,12 +18,12 @@ function singleMovie({ singleMovie }) {
       </div>
 
       <div className='right-container'>
-        <p className='movie-average-rating'>{singleMovie[0].average_rating}</p>
-        <p className='movie-release-date'>{singleMovie[0].release_date}</p>
-        <p className='movie-runtime'>{singleMovie[0].runtime}</p>
+        <p className='movie-average-rating'> <strong>Average Rating: </strong>{singleMovie[0].average_rating} / 10</p>
+        <p className='movie-release-date'> <strong>Release Date: </strong> {singleMovie[0].release_date}</p>
+        <p className='movie-runtime'> <strong>Runtime: </strong> {singleMovie[0].runtime}</p>
         <br></br>
         <div className='movie-genres-container'>
-          <p className='movie-genres'>{singleMovie[0].genres}</p>
+          <p className='movie-genres'> <strong> Genres: </strong> {singleMovie[0].genres}</p>
         </div>
       </div>
     </div>

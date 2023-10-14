@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 3px solid white
-}
+} */
 
 .single-movie-container {
   display: flex;
@@ -11,10 +11,26 @@
   height: 100vh;
 }
 
-.right-container,
-.left-container {
+.right-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 16vw;
   height: 80vh;
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+.left-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16vw;
+  height: 80vh;
+  font-family: fantasy;
+  font-size: 20px;
+  
 }
 
 .middle-container {
@@ -28,3 +44,9 @@
   color: rgb(247, 243, 243)
 }
 
+.movie-tagline {
+  font-size: 20px;
+  font-family: fantasy;
+  color: rgb(247, 243, 243)
+  
+}
