@@ -2,7 +2,7 @@ import './Movies.css';
 import Card from '../Card/Card';
 
 function Movies( {movies, displaySingleMovie} ) {
-  // console.log(props)
+  // console.log(props) 
 
   const MovieIcons = movies.map(movie => {
     return (
