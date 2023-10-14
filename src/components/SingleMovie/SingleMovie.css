@@ -1,1 +1,30 @@
-/* This is a card test */
+* {
+  border: 3px solid white
+}
+
+.single-movie-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  height: 100vh;
+}
+
+.right-container,
+.left-container {
+  width: 16vw;
+  height: 80vh;
+}
+
+.middle-container {
+  width: 60vw;
+  height: 80vh;
+}
+
+.movie-title {
+  font-size: 40px;
+  font-family: fantasy;
+  color: rgb(247, 243, 243)
+}
+
