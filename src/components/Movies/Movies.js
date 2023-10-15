@@ -1,5 +1,6 @@
 import './Movies.css';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 
 function Movies( {movies, getSingleMovie} ) {
 
@@ -23,3 +24,8 @@ function Movies( {movies, getSingleMovie} ) {
 }
 
 export default Movies
+
+Movies.propTypes = {
+  movies: PropTypes.array.isRequired,
+  getSingleMovie: PropTypes.func.isRequired
+}
