@@ -1,4 +1,5 @@
 import "./SingleMovie.css";
+import PropTypes from "prop-types";
 
 function singleMovie({ singleMovie }) {
   console.log(singleMovie);
@@ -18,12 +19,25 @@ function singleMovie({ singleMovie }) {
       </div>
 
       <div className='right-container'>
-        <p className='movie-average-rating'> <strong>Average Rating: </strong>{singleMovie.average_rating} / 10</p>
-        <p className='movie-release-date'> <strong>Release Date: </strong> {singleMovie.release_date}</p>
-        <p className='movie-runtime'> <strong>Runtime: </strong> {singleMovie.runtime}</p>
+        <p className='movie-average-rating'>
+          {" "}
+          <strong>Average Rating: </strong>
+          {singleMovie.average_rating} / 10
+        </p>
+        <p className='movie-release-date'>
+          {" "}
+          <strong>Release Date: </strong> {singleMovie.release_date}
+        </p>
+        <p className='movie-runtime'>
+          {" "}
+          <strong>Runtime: </strong> {singleMovie.runtime}
+        </p>
         <br></br>
         <div className='movie-genres-container'>
-          <p className='movie-genres'> <strong> Genres: </strong> {singleMovie.genres}</p>
+          <p className='movie-genres'>
+            {" "}
+            <strong> Genres: </strong> {singleMovie.genres}
+          </p>
         </div>
       </div>
     </div>
@@ -31,3 +45,7 @@ function singleMovie({ singleMovie }) {
 }
 
 export default singleMovie;
+
+singleMovie.propTypes = {
+  singleMovie: PropTypes.object.isRequired,
+};
