@@ -11,33 +11,37 @@ function App() {
 
   const getAllMovies = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Server is down or an error occurred.");
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log("GET ALL MOVIES", data);
-        setMovies([...data.movies]); // Why do we need a spread operator and brackets here?
+        setMovies([...data.movies]);
       })
       .catch((error) => setError(error.message));
   };
 
   const getSingleMovie = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Server is down or an error occurred.");
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log("GET SINGLE MOVIE", data);
-        setSingleMovie(data.movie); // Originally we used 2 arguments here but only needed one!
-      });
+        setSingleMovie(data.movie);
+      })
+      .catch((error) => setError(error.message));
   };
 
   useEffect(() => {
     getAllMovies();
   }, []);
-
-  // function displaySingleMovie(id) {
-  //   const yourMovie = movies.find((movie) => {
-  //     return movie.id == id;
-  //   });
-  //   setSingleMovie(yourMovie);
-  // }
 
   function displayHomePage() {
     setSingleMovie(null);
@@ -48,7 +52,11 @@ function App() {
       <h1>
         Rancid Tomatillos! <HomeButton displayHomePage={displayHomePage} />
       </h1>
-      {singleMovie ? (
+      {error ? (
+        <div className="error-message">
+          {error}
+        </div>
+      ) : singleMovie ? (
         <SingleMovie singleMovie={singleMovie} />
       ) : (
         <Movies movies={movies} getSingleMovie={getSingleMovie} />
