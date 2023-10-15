@@ -8,20 +8,25 @@ import HomeButton from "../HomeButton/HomeButton";
 
 function App() {
   const singleMockData = singleMovieData.movies;
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState([]);
   const [singleMovie, setSingleMovie] = useState(null);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    getAllMovies()
-  }, [])
+
 
 const getAllMovies = () => {
   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
   .then(response => response.json())
-  .then(data => setMovies(data))
+  .then(data => {
+    setMovies([...movies, ...data.movies])  // REVIEW THIS vs. setMovies([...movies, data]) ** MAKE SURE TO RETURN ERROR HANDLING
+  })
+  
   .catch(error => setError(error.message))
 }
+
+useEffect(() => {
+  getAllMovies()
+}, [])
 
   function displaySingleMovie(id) {
     const yourMovie = movies.find((movie) => {
@@ -31,7 +36,7 @@ const getAllMovies = () => {
   }
 
   function displayHomePage() {
-    setMovies(getAllMovies())
+    setMovies([])
     setSingleMovie(null)
   }
 
