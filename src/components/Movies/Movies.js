@@ -1,8 +1,7 @@
 import './Movies.css';
 import Card from '../Card/Card';
 
-function Movies( {movies, displaySingleMovie} ) {
-  // console.log(props) 
+function Movies( {movies, getSingleMovie} ) {
 
   const MovieIcons = movies.map(movie => {
     return (
@@ -11,7 +10,7 @@ function Movies( {movies, displaySingleMovie} ) {
         id={movie.id}
         key={movie.id}
         image={movie.poster_path}
-        displaySingleMovie={displaySingleMovie}
+        getSingleMovie={getSingleMovie}
       />
     )
   })

@@ -7,7 +7,6 @@ import SingleMovie from "../SingleMovie/SingleMovie";
 import HomeButton from "../HomeButton/HomeButton";
 
 function App() {
-  const singleMockData = singleMovieData.movies;
   const [movies, setMovies] = useState([]);
   const [singleMovie, setSingleMovie] = useState(null);
   const [error, setError] = useState(null);
@@ -18,22 +17,32 @@ const getAllMovies = () => {
   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
   .then(response => response.json())
   .then(data => {
-    setMovies([...movies, ...data.movies])  // REVIEW THIS vs. setMovies([...movies, data]) ** MAKE SURE TO RETURN ERROR HANDLING
+    console.log( "GET ALL MOVIES", data)
+    setMovies([...data.movies])  // Why do we need a spread operator and brackets here?
   })
-  
   .catch(error => setError(error.message))
+}
+
+const getSingleMovie = (id) => {
+  fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+  .then(response => response.json())
+  .then(data => { 
+    console.log("GET SINGLE MOVIE", data)
+    setSingleMovie(data.movie) // Originally we used 2 arguments here but only needed one!
+  })
 }
 
 useEffect(() => {
   getAllMovies()
 }, [])
 
-  function displaySingleMovie(id) {
-    const yourMovie = movies.find((movie) => {
-      return movie.id == id;
-    });
-    setSingleMovie(yourMovie);
-  }
+
+  // function displaySingleMovie(id) {
+  //   const yourMovie = movies.find((movie) => {
+  //     return movie.id == id;
+  //   });
+  //   setSingleMovie(yourMovie);
+  // }
 
   function displayHomePage() {
     setMovies([])
@@ -46,7 +55,7 @@ useEffect(() => {
       {singleMovie ? (
         <SingleMovie singleMovie={singleMovie} />
       ) : (
-        <Movies movies={movies} displaySingleMovie={displaySingleMovie} />
+        <Movies movies={movies} getSingleMovie={getSingleMovie} />
       )}
       
     </div>
