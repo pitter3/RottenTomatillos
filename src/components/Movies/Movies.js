@@ -1,8 +1,10 @@
 import './Movies.css';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 
 function Movies( {movies, getSingleMovie} ) {
+  console.log('USE PARAMS', useParams())
 
   const MovieIcons = movies.map(movie => {
     return (
