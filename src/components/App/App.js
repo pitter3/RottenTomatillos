@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>
+      <h1 className="header-title">
         Rancid Tomatillos! <HomeButton displayHomePage={displayHomePage} />
       </h1>
       {error ? (

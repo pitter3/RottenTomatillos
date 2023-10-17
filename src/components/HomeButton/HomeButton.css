@@ -1,0 +1,21 @@
+.home-button button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: rgb(174, 18, 10);
+  font-size: 40px; 
+  padding: 15px 15px; 
+  border: none; 
+  background-color: rgb(31, 30, 30);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); 
+  font-family: fantasy;
+  font-weight: 900;
+  border-radius: 30%;
+
+}
+
+.home-button button:hover {
+  background-color: rgb(53, 51, 51); 
+}
