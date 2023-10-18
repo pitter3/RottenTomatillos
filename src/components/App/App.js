@@ -47,16 +47,15 @@ function App() {
   function displayHomePage() {
     setSingleMovie(null);
   }
- 
+ console.log(movies)
   return (
     <div className='App'>
       <h1 className="header-title">
         Rancid Tomatillos! <HomeButton displayHomePage={displayHomePage} />
-        <Link to="/SingleMovie"></Link>
       </h1>
       <Routes>
-        <Route path='/' element={<Movies movies={movies} getSingleMovie={getSingleMovie} />} />
-        <Route path="/:MovieId" element= {<SingleMovie singleMovie={singleMovie} />} />
+        <Route exact path='/' element= { <Movies movies={movies} getSingleMovie={getSingleMovie}/>} />
+        <Route path='/SingleMovie/:id' element= { <SingleMovie singleMovie={singleMovie} />} />
       </Routes>
     </div>
   );
