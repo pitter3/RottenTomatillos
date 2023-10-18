@@ -5,6 +5,7 @@ import {Routes, Route, NavLink, Link, useParams} from 'react-router-dom'
 function Card( { id, image, getSingleMovie } ) {
 
   return (
+    <NavLink to={`/SingleMovie/${id}`}>
     <div className='card' onClick={(event) => getSingleMovie(event.target.id)}>
       <img 
         id={ id }
@@ -13,6 +14,7 @@ function Card( { id, image, getSingleMovie } ) {
         style={{ height: '300px', width: '200px' }} 
       />
     </div>
+    </NavLink>
   );
 }
 
