@@ -50,6 +50,7 @@ function App() {
 
   function displayHomePage() {
     setSingleMovie(null);
+    window.location.href='/'
   }
 
  console.log(movies)
