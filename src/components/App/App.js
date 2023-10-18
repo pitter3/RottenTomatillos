@@ -10,6 +10,10 @@ function App() {
   const [singleMovie, setSingleMovie] = useState(null);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    getAllMovies();
+  }, []);
+
   const getAllMovies = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
       .then((response) => {
@@ -36,17 +40,18 @@ function App() {
       .then((data) => {
         console.log("GET SINGLE MOVIE", data);
         setSingleMovie(data.movie);
+        console.log(singleMovie)
       })
       .catch((error) => setError(error.message));
   };
 
-  useEffect(() => {
-    getAllMovies();
-  }, []);
+
+
 
   function displayHomePage() {
     setSingleMovie(null);
   }
+
  console.log(movies)
   return (
     <div className='App'>
@@ -55,7 +60,9 @@ function App() {
       </h1>
       <Routes>
         <Route exact path='/' element= { <Movies movies={movies} getSingleMovie={getSingleMovie}/>} />
-        <Route path='/SingleMovie/:id' element= { <SingleMovie singleMovie={singleMovie} />} />
+        <Route path='/SingleMovie/:id' element={singleMovie && <SingleMovie singleMovie={singleMovie} />}
+/>
+
       </Routes>
     </div>
   );

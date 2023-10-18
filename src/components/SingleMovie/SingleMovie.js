@@ -1,8 +1,13 @@
 import "./SingleMovie.css";
 import PropTypes from "prop-types";
 
-function singleMovie({ singleMovie }) {
-  console.log(singleMovie);
+import React from "react";
+
+function SingleMovie({ singleMovie }) {
+  // if (singleMovie === null) {
+  //   return <div>Loading...</div>;
+  // }
+
   return (
     <div className='single-movie-container'>
       <div className='left-container'>
@@ -36,7 +41,7 @@ function singleMovie({ singleMovie }) {
         <div className='movie-genres-container'>
           <p className='movie-genres'>
             {" "}
-            <strong> Genres: </strong> {singleMovie.genres}
+            <strong> Genres: </strong> {singleMovie.genres.join(", ")}
           </p>
         </div>
       </div>
@@ -44,8 +49,9 @@ function singleMovie({ singleMovie }) {
   );
 }
 
-export default singleMovie;
 
-singleMovie.propTypes = {
+export default SingleMovie;
+
+SingleMovie.propTypes = {
   singleMovie: PropTypes.object.isRequired,
 };
