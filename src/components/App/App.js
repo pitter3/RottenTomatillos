@@ -3,6 +3,7 @@ import "./App.css";
 import Movies from "../Movies/Movies";
 import SingleMovie from "../SingleMovie/SingleMovie";
 import HomeButton from "../HomeButton/HomeButton";
+import {Routes, Route, NavLink, Link } from 'react-router-dom'
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -46,23 +47,17 @@ function App() {
   function displayHomePage() {
     setSingleMovie(null);
   }
-
+ console.log(movies)
   return (
     <div className='App'>
       <h1 className="header-title">
         Rancid Tomatillos! <HomeButton displayHomePage={displayHomePage} />
       </h1>
-      {error ? (
-        <div className="error-message">
-          {error}
-        </div>
-      ) : singleMovie ? (
-        <SingleMovie singleMovie={singleMovie} />
-      ) : (
-        <Movies movies={movies} getSingleMovie={getSingleMovie} />
-      )}
+      <Routes>
+        <Route exact path='/' element= { <Movies movies={movies} getSingleMovie={getSingleMovie}/>} />
+        <Route path='/SingleMovie/:id' element= { <SingleMovie singleMovie={singleMovie} />} />
+      </Routes>
     </div>
   );
 }
-
 export default App;

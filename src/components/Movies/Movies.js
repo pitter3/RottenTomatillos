@@ -1,18 +1,20 @@
 import './Movies.css';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Movies( {movies, getSingleMovie} ) {
-
+  console.log(movies)
   const MovieIcons = movies.map(movie => {
     return (
-
-      <Card
+      <Link to={`/SingleMovie/`}>
+        <Card
         id={movie.id}
         key={movie.id}
         image={movie.poster_path}
         getSingleMovie={getSingleMovie}
-      />
+        />
+      </Link>
     )
   })
   

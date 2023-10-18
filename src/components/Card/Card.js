@@ -1,7 +1,9 @@
 import './Card.css';
 import PropTypes from 'prop-types';
+import {Routes, Route, NavLink, Link, useParams} from 'react-router-dom'
 
 function Card( { id, image, getSingleMovie } ) {
+
   return (
     <div className='card' onClick={(event) => getSingleMovie(event.target.id)}>
       <img 
