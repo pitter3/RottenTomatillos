@@ -3,8 +3,7 @@ import "./App.css";
 import Movies from "../Movies/Movies";
 import SingleMovie from "../SingleMovie/SingleMovie";
 import HomeButton from "../HomeButton/HomeButton";
-import {Routes, Route, NavLink, Link } from 'react-router-dom'
-
+import {Routes, Route, NavLink, Link, useLocation } from 'react-router-dom' //import useLocation here
 function App() {
   const [movies, setMovies] = useState([]);
   const [singleMovie, setSingleMovie] = useState(null);
@@ -45,19 +44,18 @@ function App() {
       .catch((error) => setError(error.message));
   };
 
-
-
-
   function displayHomePage() {
     setSingleMovie(null);
     window.location.href='/'
   }
 
- console.log(movies)
+  const location = useLocation(); //hook that provides info about currently location of app. This initializes the 'location' constant with the current location object. 
+  
+  //conditional rendering. If the current path name includes the string 'SingleMovie, render the HomeButton component. Otherise, don't do jack shit. 
   return (
     <div className='App'>
       <h1 className="header-title">
-        Rancid Tomatillos! <HomeButton displayHomePage={displayHomePage} />
+        Rancid Tomatillos! {location.pathname.includes('/SingleMovie/') && <HomeButton displayHomePage={displayHomePage} />}
       </h1>
       <Routes>
         <Route exact path='/' element= { <Movies movies={movies} getSingleMovie={getSingleMovie}/>} />
