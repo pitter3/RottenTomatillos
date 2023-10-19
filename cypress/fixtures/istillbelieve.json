@@ -1,0 +1,16 @@
+{
+  "movie": {
+    "id": 585244,
+    "poster_path": "https://image.tmdb.org/t/p/original//dqA2FCzz4OMmXLitKopzf476RVB.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original//21Q8bzu10YF9i4O5amBkJBombYo.jpg",
+    "title": "I Still Believe",
+    "average_rating": 3.8333333333333335,
+    "release_date": "2020-03-12",
+    "overview": "A compelling story of love and hope",
+    "genres": ["Drama", "Romance"],
+    "budget": 150000000,
+    "revenue": 250000000,
+    "runtime": 120,
+    "tagline": "Believe in the power of love."
+  }
+}
