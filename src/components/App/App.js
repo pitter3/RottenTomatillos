@@ -3,8 +3,7 @@ import "./App.css";
 import Movies from "../Movies/Movies";
 import SingleMovie from "../SingleMovie/SingleMovie";
 import HomeButton from "../HomeButton/HomeButton";
-import {Routes, Route, NavLink, Link } from 'react-router-dom'
-
+import { Routes, Route, NavLink, Link, useLocation } from "react-router-dom";
 function App() {
   const [movies, setMovies] = useState([]);
   const [singleMovie, setSingleMovie] = useState(null);
@@ -40,30 +39,34 @@ function App() {
       .then((data) => {
         console.log("GET SINGLE MOVIE", data);
         setSingleMovie(data.movie);
-        console.log(singleMovie)
+        console.log(singleMovie);
       })
       .catch((error) => setError(error.message));
   };
 
-
-
-
   function displayHomePage() {
     setSingleMovie(null);
-    window.location.href='/'
+    window.location.href = "/";
   }
 
- console.log(movies)
   return (
     <div className='App'>
-      <h1 className="header-title">
-        Rancid Tomatillos! <HomeButton displayHomePage={displayHomePage} />
+      <h1 className='header-title'>
+        Rancid Tomatillos!{" "}
+        {useLocation().pathname.includes("/SingleMovie/") && (
+          <HomeButton displayHomePage={displayHomePage} />
+        )}
       </h1>
       <Routes>
-        <Route exact path='/' element= { <Movies movies={movies} getSingleMovie={getSingleMovie}/>} />
-        <Route path='/SingleMovie/:id' element={singleMovie && <SingleMovie singleMovie={singleMovie} />}
-/>
-
+        <Route
+          exact
+          path='/'
+          element={<Movies movies={movies} getSingleMovie={getSingleMovie} />}
+        />
+        <Route
+          path='/SingleMovie/:id'
+          element={singleMovie && <SingleMovie singleMovie={singleMovie} />}
+        />
       </Routes>
     </div>
   );
