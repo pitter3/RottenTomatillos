@@ -1,6 +1,6 @@
-/* * {
+ /* * {
   border: 3px solid white
-} */
+}  */
 
 
 
@@ -40,7 +40,7 @@
 
 .middle-container {
   width: 70vw;
-  height: 100vh;
+  height: 52vh;
 }
 
 .movie-title {
@@ -63,6 +63,7 @@
 
 .movie-image {
   scale: 100%;
+  display: flex;
 }
 
 .subheader {
@@ -73,12 +74,11 @@
   margin: 0;
   border: 0;
   margin-bottom: 20px;
-
- 
 }
 
 .details {
-   width: 20vw;
+   width: 50vw;
+
 }
 
 .bullet {
@@ -91,3 +91,43 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 0;
 }
+
+/*first breakpoint @ 95vw */
+@media screen and (max-width: 95em) {
+  .movie-overview, .movie-genre, .single-movie-container {
+    flex-direction: column;
+
+  }
+
+  .home-button {
+    display: none;
+  }
+
+  .right-container {
+    width: 55vw;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+  }
+
+  .single-movie-container, .middle-container, .movie-title, .subheader, .movie-tagline, .movie-image, .movie-tagline-container, .movie-title-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-wrap: wrap;
+    /* position: absolute; */
+  }
+
+  .movie-image {
+    display: flex;
+    scale: 70%;
+  }
+
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/*second breakpoint @ 35vw */
+
