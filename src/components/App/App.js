@@ -55,7 +55,7 @@ function App() {
     return `${hours}h ${minutes}m`;
   }
 
-  return (
+return (
     <div className='App'>
       <h1 className='header-title'>
       <img src="TomatoGuy.png" height={100} alt="Tomato Guy" />{" "}
@@ -77,4 +77,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

@@ -3,12 +3,17 @@ import PropTypes from "prop-types";
 
 import React from "react";
 
+
+
+
 function SingleMovie({ singleMovie, formatRunTime }) {
   // if (singleMovie === null) {
   //   return <div>Loading...</div>;
   // }
 
-  return (
+  return error ? (
+      <p className='error-message'>ERROR: {error}</p>
+    ) : (
     <div className='single-movie-container'>
       <div className='middle-container'>
         <h2 className='movie-title'>{singleMovie.title}</h2>
@@ -44,9 +49,10 @@ function SingleMovie({ singleMovie, formatRunTime }) {
         </div>
       </div>
     </div>
-  );
-  
+    )}
+  );  
 }
+
 
 {/* <li>
 {singleMovie.average_rating} / 10
