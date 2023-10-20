@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 
 import React from "react";
 
-function SingleMovie({ singleMovie }) {
+function SingleMovie({ singleMovie, error }) {
   // if (singleMovie === null) {
   //   return <div>Loading...</div>;
   // }
 
-  return (
+  return error ? (
+      <p className='error-message'>ERROR: {error}</p>
+    ) : (
     <div className='single-movie-container'>
       <div className='left-container'>
         <aside className='movie-overview'>{singleMovie.overview}</aside>
@@ -46,8 +48,8 @@ function SingleMovie({ singleMovie }) {
         </div>
       </div>
     </div>
-  );
-}
+    )}
+
 
 
 export default SingleMovie;

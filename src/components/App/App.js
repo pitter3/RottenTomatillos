@@ -57,18 +57,24 @@ function App() {
           <HomeButton displayHomePage={displayHomePage} />
         )}
       </h1>
-      <Routes>
-        <Route
-          exact
-          path='/'
-          element={<Movies movies={movies} getSingleMovie={getSingleMovie} />}
-        />
-        <Route
-          path='/SingleMovie/:id'
-          element={singleMovie && <SingleMovie singleMovie={singleMovie} />}
-        />
-      </Routes>
+      {error ? (
+        <p className='error-message'>ERROR: {error}</p>
+      ) : (
+        <Routes>
+          <Route
+            exact
+            path='/'
+            element={<Movies movies={movies} getSingleMovie={getSingleMovie} />}
+          />
+          <Route
+    
+            path='/SingleMovie/:id'
+            element={singleMovie && <SingleMovie error={error} singleMovie={singleMovie} />}
+          />
+        </Routes>
+      )}
     </div>
   );
 }
+
 export default App;
