@@ -6,7 +6,7 @@ import React from "react";
 
 
 
-function SingleMovie({ singleMovie, formatRunTime }) {
+function SingleMovie({ singleMovie, formatRunTime, error }) {
   // if (singleMovie === null) {
   //   return <div>Loading...</div>;
   // }
@@ -50,8 +50,6 @@ function SingleMovie({ singleMovie, formatRunTime }) {
       </div>
     </div>
     )}
-  );  
-}
 
 
 {/* <li>
