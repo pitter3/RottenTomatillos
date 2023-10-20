@@ -49,10 +49,16 @@ function App() {
     window.location.href = "/";
   }
 
+  function formatRunTime(totalMinutes) {
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return `${hours}h ${minutes}m`;
+  }
+
   return (
     <div className='App'>
       <h1 className='header-title'>
-        Rancid Tomatillos!{" "}
+      <img src="TomatoGuy.png" height={100} alt="Tomato Guy" />{" "}
         {useLocation().pathname.includes("/SingleMovie/") && (
           <HomeButton displayHomePage={displayHomePage} />
         )}
@@ -65,7 +71,7 @@ function App() {
         />
         <Route
           path='/SingleMovie/:id'
-          element={singleMovie && <SingleMovie singleMovie={singleMovie} />}
+          element={singleMovie && <SingleMovie singleMovie={singleMovie} formatRunTime={formatRunTime}/>}
         />
       </Routes>
     </div>
