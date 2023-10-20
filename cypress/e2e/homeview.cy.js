@@ -22,7 +22,7 @@ describe("Home page user flow", () => {
         .find("img")
         .should("have.attr", "id")
         .should("eq", "694919");
-        cy.get(".movie-container").children().eq(39).as("iStillBelieveCard");
+        cy.get(".movie-container").children().eq(39).as("iStillBelieveCard"); //.last
         cy.get("@iStillBelieveCard")
           .find("img")
           .should("have.attr", "id")

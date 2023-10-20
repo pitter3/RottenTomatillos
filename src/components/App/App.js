@@ -49,30 +49,31 @@ function App() {
     window.location.href = "/";
   }
 
-  return (
+  function formatRunTime(totalMinutes) {
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return `${hours}h ${minutes}m`;
+  }
+
+return (
     <div className='App'>
       <h1 className='header-title'>
-        Rancid Tomatillos!{" "}
+      <img src="TomatoGuy.png" height={100} alt="Tomato Guy" />{" "}
         {useLocation().pathname.includes("/SingleMovie/") && (
           <HomeButton displayHomePage={displayHomePage} />
         )}
       </h1>
-      {error ? (
-        <p className='error-message'>ERROR: {error}</p>
-      ) : (
-        <Routes>
-          <Route
-            exact
-            path='/'
-            element={<Movies movies={movies} getSingleMovie={getSingleMovie} />}
-          />
-          <Route
-    
-            path='/SingleMovie/:id'
-            element={singleMovie && <SingleMovie error={error} singleMovie={singleMovie} />}
-          />
-        </Routes>
-      )}
+      <Routes>
+        <Route
+          exact
+          path='/'
+          element={<Movies movies={movies} getSingleMovie={getSingleMovie} />}
+        />
+        <Route
+          path='/SingleMovie/:id'
+          element={singleMovie && <SingleMovie singleMovie={singleMovie} formatRunTime={formatRunTime}/>}
+        />
+      </Routes>
     </div>
   );
 }
