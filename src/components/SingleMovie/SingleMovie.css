@@ -87,7 +87,7 @@
   margin: 0;
 }
 
-/*first breakpoint @ 95vw */
+/* first breakpoint @ 95vw
 @media screen and (max-width: 95em) {
   .movie-overview,
   .movie-genre,
@@ -136,7 +136,7 @@
 }
 /*second breakpoint @ 35vw */
 
-@media screen and (max-width: 33em) {
+/* @media screen and (max-width: 33em) {
   .movie-overview,
   .movie-genre,
   .single-movie-container {
@@ -179,7 +179,7 @@
     align-items: center;
     justify-content: center;
     /* max-height: 50%; */
-  }
+  /* }
 
   .header-title {
     display: flex;
@@ -232,6 +232,5 @@
   }
 
   .right-container {
-    padding-right: 3px;
-  }
-}
+    padding-right: 3px; */
+

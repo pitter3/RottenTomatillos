@@ -55,10 +55,11 @@ function App() {
     return `${hours}h ${minutes}m`;
   }
 
-return (
+  return (
     <div className='App'>
+      {error && <div className="error-message">{error}</div>}
       <h1 className='header-title'>
-      <img src="TomatoGuy.png" height={100} alt="Tomato Guy" onClick={() => displayHomePage()} className="tomato-guy"/>{" "}
+        <img src="TomatoGuy.png" height={100} alt="Tomato Guy" onClick={() => displayHomePage()} className="tomato-guy"/>{" "}
         {useLocation().pathname.includes("/SingleMovie/") && (
           <HomeButton displayHomePage={displayHomePage} />
         )}
@@ -75,7 +76,7 @@ return (
         />
       </Routes>
     </div>
-  );
+  );  
 }
 
 export default App;
