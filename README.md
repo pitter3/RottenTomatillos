@@ -32,7 +32,7 @@ Test React components & asynchronous JS
 Practice refactoring
 Create a multi-page UX using Router
 
-)https://rotten-tomatillos-eta.vercel.app/SingleMovie/1013860
+)https://rotten-tomatillos-eta.vercel.app/
 
 
 # RANCID TOMATILLOS
