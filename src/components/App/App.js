@@ -13,14 +13,23 @@ function App() {
     getAllMovies();
   }, []);
 
+  const handleErrors = (response) => {
+    if (!response.ok) {
+      switch(response.status) {
+        case 400:
+          throw new Error("Sorry, the server is down, please try again later.");
+        case 500:
+          throw new Error("This is a bad request,  please try again later.");
+        default:
+          throw new Error("Sorry, an error occured, please refresh page or try again later.");
+      }
+    }
+    return response.json();
+  }
+
   const getAllMovies = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Server is down or an error occurred.");
-        }
-        return response.json();
-      })
+      .then(handleErrors)
       .then((data) => {
         console.log("GET ALL MOVIES", data);
         setMovies([...data.movies]);
@@ -30,12 +39,7 @@ function App() {
 
   const getSingleMovie = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Server is down or an error occurred.");
-        }
-        return response.json();
-      })
+      .then(handleErrors)
       .then((data) => {
         console.log("GET SINGLE MOVIE", data);
         setSingleMovie(data.movie);
