@@ -6,7 +6,7 @@ function Card( { id, image, getSingleMovie } ) {
 
   return (
     <NavLink to={`/SingleMovie/${id}`}>
-    <div className='card' onClick={(event) => getSingleMovie(event.target.id)}>
+    <div className='card' onClick={() => getSingleMovie(id)}>
       <img 
         id={ id }
         src={ image } 

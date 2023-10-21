@@ -44,8 +44,8 @@
   color: rgb(247, 243, 243);
   margin: auto;
   max-width: 63vw;
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
-  overflow: visible; /* Allow the text to overflow the container to the right */
+  white-space: nowrap; 
+  overflow: visible;
 }
 
 .movie-tagline {
