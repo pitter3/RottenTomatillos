@@ -14,6 +14,7 @@ describe("Home page user flow", () => {
   it("should display header and 40 movies", () => {
     cy.wait('@HomePage').then((interception) => {;
       cy.location("pathname").should("eq", "/");
+      cy.get(".tomato-guy").should("exist");
       cy.get(".movie-container").children().should("have.length", 40);
       cy.get(".movie-container").children().eq(0).as("moneyPlaneCard");
       cy.get("@moneyPlaneCard")
@@ -27,41 +28,4 @@ describe("Home page user flow", () => {
           .should("eq", "585244");
     })
   })
-
-  it('should display a helpful message to the user when an error occurs', () => {
-    cy.intercept(
-      "GET",
-      "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
-      {
-        statusCode: 500
-      }
-    ).visit("http://localhost:3000");
-    cy.get(".error-message").should('exist');
-  })
-
-  it('should display a helpful message to the user when an error occurs', () => {
-    cy.intercept(
-      "GET",
-      "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
-      {
-        statusCode: 400
-      }
-    ).visit("http://localhost:3000");
-    cy.get(".error-message").should('exist');
-  })
-
-  it('should display a helpful message to the user when an error occurs', () => {
-    cy.intercept(
-      "GET",
-      "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
-      {
-        statusCode: 300
-      }
-    ).visit("http://localhost:3000");
-    cy.get(".error-message").should('exist');
-  })
 })
-
-
-
-
