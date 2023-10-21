@@ -1,6 +1,6 @@
-/* * {
+* {
   border: 1px solid rgb(197, 16, 16);
-} */
+}
 
 .single-movie-container {
   display: flex;
@@ -63,19 +63,14 @@
 }
 
 .subheader {
-  display: flex;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 30px;
-  margin: 0;
-  border: 0;
-  margin-bottom: 20px;
-
-
+font-size: 30px;
+margin-bottom: 20px;
+width: 63vw;
 }
 
+
 .details {
-   width: 20vw;
+   width: 100%;
 }
 
 .bullet {
@@ -90,15 +85,130 @@
 }
 
 
-/* first breakpoint @ 95vw */
- /* @media screen and (max-width: 1280px) {
+/* first breakpoint @ 95vw  */
+ @media screen and (max-width: 1280px) {
   .movie-overview,
   .movie-genre,
   .single-movie-container {
     flex-direction: column;
   }
 
-  .home-button {
+  .movie-overview {
+    width: 500px;
+  }
+
+  .right-container {
+    width: 100%
+  }
+
+  .movie-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .subheader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .movie-image {
+    scale: 70%;
+  }
+
+  .movie-tagline {
+    margin-top: 0px;
+  }
+
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  .right-container {
+    width: 85%
+  }
+
+  .single-movie-container {
+    width: 85%;
+  }
+  
+  @media screen and (max-width: 625px) {
+    .movie-overview,
+    .movie-genre,
+    .single-movie-container {
+      flex-direction: column;
+    }
+  
+    .movie-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 33px;
+    }
+  
+    .image-container {
+      height: 200px;
+    }
+
+    .movie-overview {
+      width: 85%;
+    }
+
+    .right-container {
+      width: 85%
+    }
+  
+    .subheader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+    }
+  
+    .movie-image {
+      scale: 40%;
+    }
+  
+    .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    } 
+    
+    .home-button {
+      display: none;
+    }
+
+    .header-title {
+      width: 85%;
+      justify-content: center;
+      align-items: center;
+    }
+    .tomato-guy {
+      scale: 90%
+    }
+
+  .single-movie-container {
+    width: 100%;
+  }
+
+  .image-container {
+    height: 200px;
+  }
+  .movie-tagline {
+    margin-top: 0px;
+  }
+  .movie-overview-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  }
+    
+  /* .home-button {
     display: none;
   }
 
@@ -135,8 +245,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-}  */
+  } */
+} 
 /*second breakpoint @ 35vw */
 
  /* @media screen and (max-width: 33em) {
