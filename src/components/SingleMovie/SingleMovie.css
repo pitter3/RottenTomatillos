@@ -56,8 +56,10 @@
 }
 
 .movie-image {
-  scale: 100%;
-  display: flex;
+  /* display: flex; 
+  align-items: center;
+  justify-content: center; */
+  scale: 70%;
 }
 
 .subheader {
@@ -106,7 +108,6 @@
   }
 
   .single-movie-container,
-  .middle-container,
   .movie-title,
   .subheader,
   .movie-image,
@@ -116,6 +117,7 @@
     flex-direction: column;
     align-items: center;
     text-wrap: wrap;
+    max-width: 100%;
   }
 
   .movie-image {
@@ -123,8 +125,9 @@
     scale: 70%;
   }
 
-  .movie-tagline-container {
-
+  .header-title {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .image-container {
@@ -161,7 +164,6 @@
     flex-direction: column;
     align-items: center;
     text-wrap: wrap;
-  
   }
 
   .movie-image {
@@ -190,17 +192,18 @@
     justify-content: center;
     scale: 90%;
   }
-  
+
   .movie-title-container {
     max-width: 100%;
     width: 100%;
   }
 
   .movie-title {
-   font-size: 30px;
+    font-size: 30px;
   }
 
-  .details, .movie-genre {
+  .details,
+  .movie-genre {
     font-size: 20px;
   }
 
@@ -213,7 +216,6 @@
 
   .single-movie-container {
     height: 100%;
-   
   }
 
   .movie-tagline {
