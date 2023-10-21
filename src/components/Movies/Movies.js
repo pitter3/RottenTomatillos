@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 function Movies( {movies, getSingleMovie} ) {
-  console.log(movies)
+console.log("movies:=====", movies);
+
   const MovieIcons = movies.map(movie => {
     return (
      
@@ -28,6 +29,15 @@ function Movies( {movies, getSingleMovie} ) {
 export default Movies
 
 Movies.propTypes = {
-  movies: PropTypes.array.isRequired,
-  getSingleMovie: PropTypes.func.isRequired
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      average_rating: PropTypes.number.isRequired,
+      backdrop_path: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      poster_path: PropTypes.string.isRequired,
+      release_date: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  getSingleMovie: PropTypes.func.isRequired,
 }
