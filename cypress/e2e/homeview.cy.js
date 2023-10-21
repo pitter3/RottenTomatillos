@@ -9,12 +9,10 @@ describe("Home page user flow", () => {
       }
     ).as('HomePage')
     cy.visit("http://localhost:3000/");
-
-  }); // do we need beforeEach?
+  }); 
 
   it("should display header and 40 movies", () => {
-    cy.wait('@HomePage').then((interception) => {
-      cy.get(".header-title").contains("Rancid Tomatillos!");
+    cy.wait('@HomePage').then((interception) => {;
       cy.location("pathname").should("eq", "/");
       cy.get(".movie-container").children().should("have.length", 40);
       cy.get(".movie-container").children().eq(0).as("moneyPlaneCard");

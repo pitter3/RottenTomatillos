@@ -26,7 +26,6 @@ describe("Home button user flow", () => {
       cy.wait("@MoneyPlane").then((interception) => {
         cy.get(".movie-title").contains("Money Plane");
         cy.get('button').click();
-        // Add an assertion to ensure you are back on the home page.
         cy.url().should("eq", "http://localhost:3000/");
       });
     });
@@ -46,7 +45,7 @@ describe("Home button user flow", () => {
       cy.get(".movie-container").children().eq(0).click();
       cy.get(".movie-title").contains("Money Plane");
       cy.get(".tomato-guy").click()
-      // Add an assertion to ensure you are back on the home page.
+      cy.url().should("eq", "http://localhost:3000/");
     });
   });
 });
