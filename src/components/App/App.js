@@ -58,7 +58,7 @@ function App() {
 return (
     <div className='App'>
       <h1 className='header-title'>
-      <img src="TomatoGuy.png" height={100} alt="Tomato Guy" onClick={() => displayHomePage()}/>{" "}
+      <img src="TomatoGuy.png" height={100} alt="Tomato Guy" onClick={() => displayHomePage()} className="tomato-guy"/>{" "}
         {useLocation().pathname.includes("/SingleMovie/") && (
           <HomeButton displayHomePage={displayHomePage} />
         )}
