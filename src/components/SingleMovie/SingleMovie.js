@@ -33,7 +33,7 @@ function SingleMovie({ singleMovie, formatRunTime, error }) {
           />
         </div>
         <div className='movie-tagline-container'>
-          <p className='movie-tagline'>{singleMovie.tagline}</p>
+          <p className='movie-tagline'>{singleMovie.tagline || "___"}</p>
         </div>
       </div>
 
