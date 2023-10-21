@@ -29,11 +29,11 @@ function SingleMovie({ singleMovie, formatRunTime, error }) {
             className='movie-image'
             src={singleMovie.backdrop_path}
             alt='movie picture'
-            style={{ height: "540px", width: "960px" }}
+            style={{ height: "486px", width: "864px" }}
           />
         </div>
         <div className='movie-tagline-container'>
-          <p className='movie-tagline'>{singleMovie.tagline}</p>
+          <p className='movie-tagline'>{singleMovie.tagline || "___"}</p>
         </div>
       </div>
 
