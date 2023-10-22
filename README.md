@@ -32,8 +32,8 @@ Test React components & asynchronous JS
 Practice refactoring
 Create a multi-page UX using Router
 
-)https://rotten-tomatillos-eta.vercel.app/
-
+Come check out our app!
+Deployed Link: https://rotten-tomatillos-eta.vercel.app/
 
 # RANCID TOMATILLOS
 <div align="center">
