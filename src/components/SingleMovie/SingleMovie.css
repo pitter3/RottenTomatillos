@@ -6,6 +6,13 @@
   text-align: center;
   height: auto;
   width: 100vw;
+  box-shadow: 10px 5px 15px rgba(10, 10, 10, 0.3);
+}
+
+.right-container {
+  box-shadow: 10px 10px 10px rgba(9, 9, 9, 9);
+  border-radius: 5px;
+  margin: 10px;
 }
 
 .right-container {
@@ -48,15 +55,21 @@
   max-width: 63vw;
   white-space: nowrap;
   overflow: visible;
+
 }
 
 .movie-tagline {
   font-size: 30px;
   color: rgb(247, 243, 243);
+  font-weight: 600;
 }
 
 .movie-image {
   scale: 100%;
+  scale: 100%;
+  box-shadow: 0 10px 10px rgba(12, 12, 12, 0.6), 0 6px 20px rgba(8, 8, 8, 0.4);
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
 
 .subheader {
@@ -84,6 +97,9 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 1280px) {
