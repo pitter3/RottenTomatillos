@@ -117,8 +117,18 @@
     scale: 70%;
   }
 
+  .movie-title {
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
   .movie-tagline {
     margin-top: 0px;
+  }
+
+  .details {
+    display: flex;
+    justify-content: center;
   }
 
   .image-container {
@@ -146,7 +156,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 33px;
+      font-size: 30px;
+    }
+
+    .movie-title {
+      white-space: normal;
+      overflow-wrap: break-word;
     }
 
     .image-container {
@@ -159,6 +174,7 @@
 
     .right-container {
       width: 85%;
+      padding-right: 20px;
     }
 
     .subheader {
