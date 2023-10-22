@@ -12,12 +12,12 @@ Fully tested e2e with Cypress!
 ## Abstract:
 Welcome to our Rancid Tomatillos app! 
 
-Are you trying to find an exciting movie to watch today but you’re unsure of which one to chose from? Look no further! Our app is the perfect one for you! Our app will greet you with a list of movies for you to choose from. All you have to do is click on the individual movie you are interested in. Our app will then display more information about the movie for you; such as: run time, rating, genre, summary and more! If the movie doesn’t interest you, you can click on the logo on the left or the home button to bring you back to the main dashboard of all of the movies. We hope you find a great movie or more to watch. We hope we helped you find a great movie of your choice. Happy watching! 
+Are you trying to find an exciting movie to watch today but you’re unsure of which one to choose from? Look no further! Our app is the perfect one for you! Our app will greet you with a list of movies for you to choose from. All you have to do is click on the individual movie you are interested in. Our app will then display more information about the movie for you; such as: run time, genre, summary, and more! If the movie doesn’t interest you, you can click on the logo on the left or the home button to bring you back to the main dashboard containing all of the movies. We hope you find a great movie or more to watch. 
 
+We hope we helped you find a great movie of your choice. Happy watching! 
 
 ## Preview of App:
 ![Rancid](GIF LINK HERE)
-
 
 ## Contributors:
 Nicole Lam
