@@ -17,7 +17,7 @@ Are you trying to find an exciting movie to watch today but you’re unsure of w
 We hope we helped you find a great movie of your choice. Happy watching! 
 
 ## Preview of App:
-![Rancid](GIF LINK HERE)
+(![Alt text](rancidreadme.gif))
 
 ## Contributors:
 Nicole Lam
