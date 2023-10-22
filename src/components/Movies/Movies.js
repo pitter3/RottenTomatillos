@@ -1,11 +1,8 @@
 import './Movies.css';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 
 function Movies( {movies, getSingleMovie} ) {
-console.log("movies:=====", movies);
-
   const MovieIcons = movies.map(movie => {
     return (
      

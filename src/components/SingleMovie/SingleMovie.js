@@ -4,11 +4,6 @@ import PropTypes from "prop-types";
 import React from "react";
 
 function SingleMovie({ singleMovie, formatRunTime, error }) {
-  console.log("singleMovie:=====", singleMovie);
-  // if (singleMovie === null) {
-  //   return <div>Loading...</div>;
-  // }
-
   return error ? (
     <p className='error-message'>ERROR: {error}</p>
   ) : (
@@ -53,11 +48,6 @@ function SingleMovie({ singleMovie, formatRunTime, error }) {
   );
 }
 
-{
-  /* <li>
-{singleMovie.average_rating} / 10
-</li> */
-}
 export default SingleMovie;
 
 SingleMovie.propTypes = {
