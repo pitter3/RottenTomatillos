@@ -31,7 +31,6 @@ function App() {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
       .then(handleErrors)
       .then((data) => {
-        console.log("GET ALL MOVIES", data);
         setMovies([...data.movies]);
       })
       .catch((error) => setError(error.message));
@@ -41,9 +40,7 @@ function App() {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(handleErrors)
       .then((data) => {
-        console.log("GET SINGLE MOVIE", data);
         setSingleMovie(data.movie);
-        console.log(singleMovie);
       })
       .catch((error) => setError(error.message));
   };
