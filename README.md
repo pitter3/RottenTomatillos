@@ -30,8 +30,9 @@ We hope we helped you find a great movie of your choice. Happy watching!
 This is the first project of Mod 3 at Turing School of Software & Design. We were given ~1.5 weeks to create this project from scratch using a provided comp found. We probably spent 50-60 hours on this project over the week. This project is our first attempt at making a react app, and we used many new technologies such as react-router, cypress e2e testing, responsive design, and proptypes.
 
 ## Learning Goals:
--Gain competency with React fundamentals
--Test React components & asynchronous JS
--Practice refactoring
--Create a multi-page UX using Router
+
+- Gain competency with React fundamentals
+- Test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
 
