@@ -6,7 +6,7 @@
  <img src="https://shields.io/badge/react-black?logo=react&style=for-the-badge" />
 
 Come check out our app!
-Deployed Link: https://rotten-tomatillos-eta.vercel.app/
+[Deployed Link](https://rotten-tomatillos-eta.vercel.app/)
 
 ##### Testing Technologies:
 Fully tested e2e with Cypress!
